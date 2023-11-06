@@ -27,3 +27,32 @@ else {
 }
 
 // PARI E DISPARI ---------------------------------------------------------------------------
+
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione).
+function pariODispari(num1, num2) {
+    let vince="";
+    if ((num1+num2)%2==0) {
+        vince="pari";
+    }
+    else {
+        vince="dispari";
+    }
+    return vince;
+}
+
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+
+const scelta = prompt("scegli, pari o dispari?");
+const numUtente = parseInt(prompt("scegli un numero da 1 a 5")); 
+
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+
+const numPc = Math.floor(Math.random() * 5) +1;
+
+if (pariODispari(numUtente,numPc) == scelta) {
+    console.log(`il tuo numero è ${numUtente}, il numero del pc è ${numPc}, HAI VINTO!`)
+}
+else {
+    console.log(`il tuo numero è ${numUtente}, il numero del pc è ${numPc}, HAI PERSO!`)
+}
+
